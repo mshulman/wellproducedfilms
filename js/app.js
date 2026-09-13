@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     stranger: {
       name: "Stranger",
       role: "",
-      img: "https://img1.wsimg.com/isteam/ip/25c80e0c-0757-4c39-a570-2e290b42bc79/The%20Stranger.jpeg",
+      img: "images/character_stranger.jpg",
       desc: "The stranger is a mysterious dark skinned, dark haired refugee in his early 30’s. He has recently arrived in the county after being the sole survivor of terrible accident at sea. A stranger in a strange land, he is searching for his community and his audience. Orla believes that she sees him perform miracles."
     },
     dad: {
