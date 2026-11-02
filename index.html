@@ -5,603 +5,1254 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- SEO & Social Preview Meta Tags -->
-  <title>ORLA</title>
-  <meta name="description" content="Discover Orla, a cinematic coming-of-age drama and magical realism film adapted from the acclaimed novel by Eoghan Walls. Produced by Well Produced Films.">
+  <title>Well Produced Films</title>
+  <meta name="description" content="Well Produced Films - Great stories told visually.">
   <meta name="author" content="Well Produced Films">
-  <meta property="og:title" content="ORLA">
-  <meta property="og:description" content="A coming-of-age story of loss, magical realism, and heartfelt redemption. Adapted from Eoghan Walls's novel 'The Gospel of Orla'.">
-  <meta property="og:image" content="https://orlafilm-staging-wj44w.ondigitalocean.app/images/hero_final.jpeg">
-  <meta property="og:image:width" content="1024">
-  <meta property="og:image:height" content="1024">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ORLA">
-  <meta name="twitter:description" content="A coming-of-age story of loss, magical realism, and heartfelt redemption. Adapted from Eoghan Walls's novel 'The Gospel of Orla'.">
-  <meta name="twitter:image" content="https://orlafilm-staging-wj44w.ondigitalocean.app/images/hero_final.jpeg">
   
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/index.css?v=15">
+  <!-- Favicon: Director's Chair -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="images/favicon.png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-color: #f7f6f2;
+      --text-main: #1f1d1a;
+      --text-muted: #5e5953;
+      --accent-color: #8c7355;
+      --accent-hover: #755f44;
+      --card-bg: #ffffff;
+      --border-color: #e5e0d8;
+      --shadow-soft: 0 16px 40px -12px rgba(31, 29, 26, 0.08);
+      --shadow-lift: 0 24px 50px -15px rgba(31, 29, 26, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Top Full-Width Logo Header */
+    .hero-banner {
+      width: 100%;
+      background-color: #f7f6f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+    }
+
+    /* Container holding the logo and the tagline below */
+    .hero-container {
+      width: 100%;
+      max-width: 800px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo-img {
+      width: 100%;
+      max-width: 660px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Tagline placed directly under the styled text */
+    .tagline-container {
+      width: 100%;
+      max-width: 650px;
+      text-align: center;
+      margin-top: 0.15rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tagline-text {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.1rem;
+      font-weight: 500;
+      font-style: italic;
+      color: #1f1b17;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      width: 100%;
+      max-width: 1140px;
+      padding: 2.5rem 1.5rem 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.25rem;
+      position: relative;
+    }
+
+    /* Nancy Garvin Headshot Showcase */
+    .headshot-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 3rem 2.5rem 2.5rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 520px;
+      width: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .headshot-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lift);
+    }
+
+    .photo-frame {
+      width: 290px;
+      height: 360px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 2.25rem;
+      box-shadow: 0 12px 32px rgba(31, 29, 26, 0.1);
+      background-color: #edeae2;
+    }
+
+    .headshot-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+
+    .person-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.3rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+    }
+
+    .person-title {
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+
+    .person-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--accent-color);
+      opacity: 0.45;
+      margin-bottom: 1.25rem;
+    }
+
+    .person-role {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* Nancy Garvin Bio Card */
+    .bio-card {
+      width: 100%;
+      max-width: 520px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.75rem 2.25rem 2.5rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .bio-card:hover {
+      box-shadow: var(--shadow-lift);
+    }
+
+    .bio-heading {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .bio-subheading {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-bottom: 1.25rem;
+    }
+
+    .bio-divider {
+      width: 44px;
+      height: 1px;
+      background: var(--accent-color);
+      opacity: 0.45;
+      margin-bottom: 1.5rem;
+    }
+
+    .bio-body {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #3d3832;
+      margin-bottom: 1.75rem;
+      text-align: left;
+    }
+
+    .bio-body p {
+      margin-bottom: 1rem;
+    }
+
+    .bio-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .bio-credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .credential-tag {
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      background: #f7f5f0;
+      border: 1px solid #e7e2d7;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+    }
+
+    /* Side-by-Side Projects Section (2 Equal Width Blocks) */
+    .projects-grid {
+      width: 100%;
+      max-width: 1140px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+      align-items: stretch;
+    }
+
+    .project-block {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem 1.6rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-block:hover {
+      box-shadow: var(--shadow-lift);
+      transform: translateY(-3px);
+    }
+
+    .project-block-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-block-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-block-divider {
+      width: 36px;
+      height: 1px;
+      background: var(--accent-color);
+      opacity: 0.45;
+      margin: 0.65rem auto 0;
+    }
+
+    /* Past Projects: 4 Thumbnails (16:9) */
+    .past-thumbnails-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+      flex: 1;
+    }
+
+    .past-thumbnail-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .placeholder-16-9 {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #ede7de 0%, #ded7cc 100%);
+      border: 1px solid #dcd4c7;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .placeholder-badge {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7a6e60;
+      background: rgba(255, 255, 255, 0.65);
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      backdrop-filter: blur(4px);
+    }
+
+    .past-thumbnail-title {
+      font-size: 0.76rem;
+      font-weight: 500;
+      color: var(--text-main);
+      line-height: 1.3;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .past-thumbnail-subtitle {
+      font-size: 0.68rem;
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.25;
+    }
+
+    .thumbnail-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      background-color: #edeae2;
+      border: 1px solid #dcd4c7;
+    }
+
+    .thumbnail-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .thumbnail-frame:hover .thumbnail-img {
+      transform: scale(1.04);
+    }
+
+    /* Current Work Block */
+    .current-work-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      flex: 1;
+    }
+
+    .current-hero-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1.15rem;
+      background-color: #1a1816;
+    }
+
+    .current-hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+      filter: brightness(1.22) contrast(1.06);
+      transition: transform 0.4s ease, filter 0.3s ease;
+    }
+
+    .current-work-content:hover .current-hero-img {
+      transform: scale(1.02);
+      filter: brightness(1.26) contrast(1.08);
+    }
+
+    .current-work-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+    }
+
+    .current-invite-note {
+      font-size: 0.88rem;
+      font-style: italic;
+      color: var(--accent-color);
+      margin-bottom: 1.15rem;
+      font-weight: 500;
+    }
+
+    .btn-invite-contact {
+      background-color: transparent;
+      color: var(--accent-color);
+      border: 1px solid var(--accent-color);
+      padding: 0.55rem 1.35rem;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-invite-contact:hover {
+      background-color: var(--accent-color);
+      color: #ffffff;
+    }
+
+    /* Future Projects Block */
+    .future-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 0.85rem;
+    }
+
+    .future-item {
+      background: #faf8f5;
+      border: 1px solid #ebe5dc;
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .future-item-tag {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+    }
+
+    .future-item-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .future-item-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* Contact Box directly after Headshot */
+    .contact-box {
+      width: 100%;
+      max-width: 520px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.25rem 1.75rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-box:hover {
+      box-shadow: var(--shadow-lift);
+    }
+
+    .contact-box-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.15rem;
+    }
+
+    .contact-box-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+      line-height: 1.4;
+    }
+
+    /* Contact Action Button */
+    .btn-contact {
+      background-color: var(--accent-color);
+      color: #ffffff;
+      border: none;
+      padding: 0.9rem 2.25rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: 0 4px 14px rgba(140, 115, 85, 0.3);
+      transition: all 0.25s ease;
+    }
+
+    .btn-contact:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(140, 115, 85, 0.4);
+    }
+
+    .btn-contact:active {
+      transform: translateY(0);
+    }
+
+    .btn-contact svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* Modal Dialog Overlay */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(20, 18, 16, 0.65);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.25rem;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-dialog {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      max-width: 500px;
+      width: 100%;
+      padding: 2.25rem;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+      position: relative;
+      transform: scale(0.95) translateY(12px);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-overlay.open .modal-dialog {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .modal-close-btn:hover {
+      background: #f0ece5;
+      color: var(--text-main);
+    }
+
+    .modal-header {
+      margin-bottom: 1.5rem;
+      padding-right: 2rem;
+    }
+
+    .modal-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+    }
+
+    .modal-subtitle {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* Form Fields */
+    .form-group {
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #4a453f;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 0.75rem 0.95rem;
+      font-family: inherit;
+      font-size: 0.92rem;
+      color: var(--text-main);
+      background-color: #faf9f6;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      outline: none;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: var(--accent-color);
+      background-color: #ffffff;
+      box-shadow: 0 0 0 3px rgba(140, 115, 85, 0.15);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    /* Captcha Section */
+    .captcha-box {
+      background: #faf8f5;
+      border: 1px solid #e8e2d8;
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .captcha-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .captcha-question {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .captcha-badge {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: #ece7de;
+      color: #635c53;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .captcha-refresh-btn {
+      background: none;
+      border: none;
+      color: var(--accent-color);
+      font-size: 0.78rem;
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 0;
+    }
+
+    .captcha-refresh-btn:hover {
+      color: var(--accent-hover);
+    }
+
+    /* Bot Trap Honeypot (Hidden from Humans) */
+    .trap-field {
+      display: none !important;
+      position: absolute;
+      left: -9999px;
+    }
+
+    /* Submit Button & Messages */
+    .btn-submit {
+      width: 100%;
+      background-color: var(--accent-color);
+      color: #ffffff;
+      border: none;
+      padding: 0.95rem 1.5rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.25s ease, transform 0.2s ease;
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      background-color: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .form-status {
+      margin-top: 1rem;
+      font-size: 0.88rem;
+      text-align: center;
+      min-height: 1.25rem;
+    }
+
+    .form-status.success {
+      color: #2e6930;
+      font-weight: 500;
+    }
+
+    .form-status.error {
+      color: #b5382b;
+      font-weight: 500;
+    }
+
+    @media (max-width: 900px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+        max-width: 540px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .hero-banner {
+        padding: 1.5rem 1rem 1.5rem;
+      }
+      .tagline-text {
+        font-size: 1.35rem;
+        white-space: normal;
+      }
+      .main-content {
+        padding: 2.5rem 1rem 5rem;
+      }
+      .headshot-card,
+      .contact-box,
+      .bio-card,
+      .project-block {
+        padding: 1.75rem 1.25rem;
+      }
+      .photo-frame {
+        width: 230px;
+        height: 290px;
+        margin-bottom: 1.75rem;
+      }
+      .person-name {
+        font-size: 1.85rem;
+      }
+      .modal-dialog {
+        padding: 1.75rem 1.25rem;
+      }
+    }
+
+    /* Page Footer / Copyright Notice */
+    .site-footer {
+      width: 100%;
+      max-width: 1140px;
+      padding: 0 1.5rem 2.5rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .footer-content {
+      text-align: right;
+    }
+
+    .copyright-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      letter-spacing: 0.03em;
+      margin-bottom: 0.25rem;
+    }
+
+    .last-updated-text {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      opacity: 0.75;
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 650px) {
+      .site-footer {
+        justify-content: center;
+        text-align: center;
+        padding-bottom: 2rem;
+      }
+      .footer-content {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Password Gate Speedbump Overlay -->
-  <div id="gate-overlay" class="gate-overlay" aria-modal="true" role="dialog">
-    <div class="gate-card">
-      <span class="gate-tag">PRIVATE PREVIEW</span>
-      <h2 class="gate-title">ORLA</h2>
-      <p class="gate-subtitle">Please enter the password to view this preview.</p>
-      <form id="gate-form" class="gate-form" autocomplete="off">
-        <div class="gate-input-wrapper">
-          <input type="password" id="gate-password" class="gate-input" placeholder="Enter password" required autofocus autocomplete="current-password">
+  <!-- Full-width WPF Logo Header with Tagline below the film strip -->
+  <header class="hero-banner">
+    <div class="hero-container">
+      <div class="logo-wrapper">
+        <img src="images/wpf_logo.png" alt="Well Produced Films" class="logo-img">
+      </div>
+      
+      <div class="tagline-container">
+        <p class="tagline-text">“Great stories told visually”</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main section with Nancy Garvin headshot & Contact Box -->
+  <main class="main-content">
+    
+    <!-- Headshot Card -->
+    <div class="headshot-card">
+      <div class="photo-frame">
+        <img src="images/nancy_garvin.jpeg" alt="Nancy Garvin" class="headshot-img">
+      </div>
+      <h1 class="person-name">Nancy Garvin</h1>
+      <span class="person-title">Well Produced Films</span>
+    </div>
+
+    <!-- Contact Box directly after photo -->
+    <div class="contact-box" id="contact-box">
+      <h2 class="contact-box-title">Get in Touch</h2>
+      <p class="contact-box-desc">For production inquiries, collaborations, or creative opportunities.</p>
+      <button type="button" class="btn-contact" id="open-contact-dialog-btn" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        Contact Nancy
+      </button>
+    </div>
+
+    <!-- Biography Section -->
+    <div class="bio-card" id="bio-section">
+      <h2 class="bio-heading">Biography</h2>
+      <span class="bio-subheading">Lead Producer / Writer / Director</span>
+      <div class="bio-divider"></div>
+      <div class="bio-body">
+        <p>Nancy is a Filmmaker and Producer whose work unites rich narrative traditions with hands-on start-up execution. Holding degrees from Marylhurst University and The California Center at ASU, she brings an interdisciplinary, collaborative approach from development through distribution. She is committed to producing compelling, emotionally resonant and financially successful cinema for international audiences, beginning with <em>ORLA</em>.</p>
+      </div>
+      <div class="bio-credentials">
+        <span class="credential-tag">CEO &amp; Producer, Well Produced Films</span>
+        <span class="credential-tag">Screenwriter, <em>ORLA</em></span>
+        <span class="credential-tag">Independent Film Producer</span>
+      </div>
+    </div>
+
+    <!-- 3 Side-by-Side Projects Blocks (Equal Width) -->
+    <section class="projects-grid" aria-label="Projects and Productions">
+      
+      <!-- Block 1: Past Projects (Left) -->
+      <article class="project-block" id="block-past-projects">
+        <div class="project-block-header">
+          <h3 class="project-block-title">Past Projects</h3>
+          <div class="project-block-divider"></div>
         </div>
-        <button type="submit" id="gate-submit-btn" class="btn btn-primary gate-btn">ENTER SITE</button>
-        <div id="gate-error" class="gate-error" aria-live="polite"></div>
+        <div class="past-thumbnails-grid">
+          
+          <!-- Top Left Thumbnail: Perfect Warrior -->
+          <div class="past-thumbnail-item">
+            <div class="thumbnail-frame">
+              <img src="images/perfect_warrior_16_9.jpg" alt="Perfect Warrior film still" class="thumbnail-img">
+            </div>
+            <p class="past-thumbnail-title">Perfect Warrior</p>
+            <p class="past-thumbnail-subtitle">Short film, producer</p>
+          </div>
+
+          <!-- Top Right Thumbnail: Can't Go Back -->
+          <div class="past-thumbnail-item">
+            <div class="thumbnail-frame">
+              <img src="images/cant_go_back_16_9.png" alt="Can't Go Back short film still" class="thumbnail-img">
+            </div>
+            <p class="past-thumbnail-title">Can't Go Back</p>
+            <p class="past-thumbnail-subtitle">Short film, produced and directed</p>
+          </div>
+
+          <!-- 3rd Thumbnail (Bottom Left): Equivocal -->
+          <div class="past-thumbnail-item">
+            <div class="thumbnail-frame">
+              <img src="images/equivocal_16_9.png" alt="Equivocal short film still" class="thumbnail-img">
+            </div>
+            <p class="past-thumbnail-title">Equivocal</p>
+            <p class="past-thumbnail-subtitle">Short film, producer</p>
+          </div>
+
+          <!-- 4th Thumbnail (Bottom Right): What's He Building -->
+          <div class="past-thumbnail-item">
+            <div class="thumbnail-frame">
+              <img src="images/whats_he_building_16_9.png" alt="What's He Building short film still" class="thumbnail-img">
+            </div>
+            <p class="past-thumbnail-title">What's He Building</p>
+            <p class="past-thumbnail-subtitle">Short film, directed by. Audience Choice Award winner at POW! Fest, 2003</p>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- Block 2: Current Work (Middle) -->
+      <article class="project-block" id="block-current-work">
+        <div class="project-block-header">
+          <h3 class="project-block-title">Current Work</h3>
+          <div class="project-block-divider"></div>
+        </div>
+        <div class="current-work-content">
+          <div class="current-hero-frame">
+            <img src="images/hero_final.jpeg" alt="ORLA Feature Film" class="current-hero-img">
+          </div>
+          <h4 class="current-work-title">ORLA</h4>
+          <p class="current-invite-note">Contact me for an invite code</p>
+          <button type="button" class="btn-invite-contact" id="request-invite-btn">Request Code</button>
+        </div>
+      </article>
+
+      <!-- Block 3: Future Projects (Hidden for now, filling space with 2 blocks) -->
+      <!--
+      <article class="project-block" id="block-future-projects" style="display: none;">
+        <div class="project-block-header">
+          <h3 class="project-block-title">Future Projects</h3>
+          <div class="project-block-divider"></div>
+        </div>
+        <div class="future-content">
+          
+          <div class="future-item">
+            <span class="future-item-tag">In Development</span>
+            <h4 class="future-item-title">The Horizon Echo</h4>
+            <p class="future-item-desc">A character-focused psychological drama exploring memory and reconciliation along the rugged Atlantic coast.</p>
+          </div>
+
+          <div class="future-item">
+            <span class="future-item-tag">Early Concept</span>
+            <h4 class="future-item-title">Silent Chorus</h4>
+            <p class="future-item-desc">An emotionally resonant narrative centered on artistic legacy, family ties, and unspoken generational bonds.</p>
+          </div>
+
+        </div>
+      </article>
+      -->
+
+    </section>
+
+  </main>
+
+  <!-- Site Footer (Bottom Right Copyright & Timestamp) -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p class="copyright-text">Copyright &copy; 2026 Well Produced Films, LLC &ndash; All Rights Reserved.</p>
+      <!-- NOTE: Because this page is static, update the last-updated timestamp below to the current UTC datetime when saving changes to index.html -->
+      <p class="last-updated-text">Last updated: 2026-11-02 00:05:00 UTC</p>
+    </div>
+  </footer>
+
+  <!-- Accessible Modal Contact Dialog with CAPTCHA -->
+  <div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">&times;</button>
+      
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Contact Nancy</h3>
+        <p class="modal-subtitle">Send a secure direct message to Nancy Garvin.</p>
+      </div>
+
+      <form id="contact-form" novalidate autocomplete="off">
+        
+        <!-- Anti-bot honeypot field -->
+        <div class="trap-field" aria-hidden="true">
+          <label for="website_url">Leave empty</label>
+          <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label for="contact-name" class="form-label">Your Name</label>
+          <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Jane Doe" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-email" class="form-label">Your Email</label>
+          <input type="email" id="contact-email" name="email" class="form-input" placeholder="e.g. jane@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-subject" class="form-label">Subject</label>
+          <input type="text" id="contact-subject" name="subject" class="form-input" placeholder="Regarding your next project..." required>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-message" class="form-label">Message</label>
+          <textarea id="contact-message" name="message" class="form-textarea" placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <!-- Captcha Challenge Section -->
+        <div class="captcha-box">
+          <div class="captcha-header">
+            <span class="captcha-question" id="captcha-question">Loading verification...</span>
+            <span class="captcha-badge">Security Check</span>
+          </div>
+          <div style="display: flex; gap: 0.75rem; align-items: center;">
+            <input type="text" id="captcha-input" name="captcha" class="form-input" placeholder="Enter answer" style="max-width: 150px;" required>
+            <button type="button" id="refresh-captcha-btn" class="captcha-refresh-btn">New question</button>
+          </div>
+          <input type="hidden" id="captcha-token" name="captcha_token" value="">
+        </div>
+
+        <button type="submit" class="btn-submit" id="submit-btn">Send Message</button>
+        <div class="form-status" id="form-status" aria-live="polite"></div>
+
       </form>
     </div>
   </div>
 
-  <!-- Scroll-spy Transparent Header -->
-  <header class="header" id="site-header">
-    <div class="container header-container">
-      <a href="#" class="logo" id="logo-link">Well Produced Films</a>
-      <button class="mobile-menu-toggle" aria-label="Toggle Menu" id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="nav-menu" id="nav-menu">
-        <a href="#hero" class="nav-link active">FILM</a>
-        <a href="#novel" class="nav-link">NOVEL</a>
-        <a href="#about" class="nav-link">STORY</a>
-        <a href="#world" class="nav-link">WORLD</a>
-        <a href="#themes" class="nav-link">THEMES</a>
-        <a href="#bios" class="nav-link">TEAM</a>
-        <a href="#contact" class="nav-link" style="display: none;">INVEST</a>
-        <a href="#contact" class="nav-link nav-btn" style="display: none;">CONTACT</a>
-      </nav>
-    </div>
-  </header>
+  <script>
+    // Contact Dialog Modal and Bot-Safe Email Form
+    const modal = document.getElementById('contact-modal');
+    const openBtn = document.getElementById('open-contact-dialog-btn');
+    const closeBtn = document.getElementById('modal-close-btn');
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const formStatus = document.getElementById('form-status');
+    const captchaQuestion = document.getElementById('captcha-question');
+    const captchaToken = document.getElementById('captcha-token');
+    const captchaInput = document.getElementById('captcha-input');
+    const refreshCaptchaBtn = document.getElementById('refresh-captcha-btn');
 
-  <!-- Hero Banner Section -->
-  <section class="hero" id="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content container">
-      <span class="hero-subtitle">Coming Soon</span>
-      <h1 class="hero-title">ORLA</h1>
-      <p class="hero-synopsis">After her mother’s battle with cancer, Orla, a grieving 14-year-old, sets off to Northern Ireland with a mysterious stranger who she believes possesses extraordinary powers that can bring her dead mother back to life.</p>
-      <div class="hero-actions">
-        <a href="#about" class="btn btn-primary">EXPLORE THE STORY</a>
-        <a href="#contact" class="btn btn-outline" style="display: none;">PRODUCTION ENQUIRIES</a>
-      </div>
-    </div>
-  </section>
+    // Client-side Arithmetic CAPTCHA (works offline and on static hosts without server)
+    let currentCaptchaAnswer = 0;
 
-  <!-- Novel / Praise Section -->
-  <section class="section praise" id="novel">
-    <div class="praise-bg-decor"></div>
-    <div class="container">
-      <div class="text-center novel-header">
-        <span class="novel-tag">FROM ACCLAIMED NOVEL TO FEATURE FILM</span>
-        <h2 class="accent-heading">THE GOSPEL OF ORLA</h2>
-      </div>
+    function loadCaptcha() {
+      const n1 = Math.floor(Math.random() * 8) + 2;
+      const n2 = Math.floor(Math.random() * 8) + 1;
+      currentCaptchaAnswer = n1 + n2;
+      captchaQuestion.textContent = `What is ${n1} + ${n2}?`;
+      captchaInput.value = '';
+    }
 
-      <div class="novel-showcase">
-        <!-- Book Cover Column -->
-        <div class="novel-cover-col">
-          <div class="novel-book-frame">
-            <img src="images/book_cover.jpeg" alt="The Gospel of Orla Novel Book Cover by Eoghan Walls" class="novel-book-img">
-          </div>
-          <div class="novel-book-info">
-            <h3 class="novel-book-title">THE GOSPEL<br>OF ORLA</h3>
-            <span class="novel-publisher">Seven Stories Press</span>
-          </div>
-        </div>
+    const requestInviteBtn = document.getElementById('request-invite-btn');
 
-        <!-- Reviews / Praise Carousel Column -->
-        <div class="carousel-wrapper">
-          <div class="praise-carousel" id="praise-carousel">
-            <!-- Slide 1 -->
-            <div class="praise-slide active">
-              <blockquote class="praise-quote">
-                "<em>The Gospel of Orla</em> is written with immense control and precision so that the voice of the protagonist emerges as alive, individual and memorable. Eoghan Walls manages to make every single emotion Orla feels―every thought, response and action―utterly convincing and fresh and original."
-              </blockquote>
-              <cite class="praise-author">Colm Tóibín</cite>
-              <span class="author-title">Acclaimed Novelist &amp; Critic</span>
-            </div>
+    function openModal(prefillSubject) {
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (prefillSubject) {
+        const subjectInput = document.getElementById('contact-subject');
+        if (subjectInput) subjectInput.value = prefillSubject;
+      }
+      loadCaptcha();
+      setTimeout(() => {
+        document.getElementById('contact-name').focus();
+      }, 100);
+    }
 
-            <!-- Slide 2 -->
-            <div class="praise-slide">
-              <blockquote class="praise-quote">
-                "As coming-of-age stories go, <em>The Gospel of Orla</em> is winningly off-kilter. Walls refuses easy sentimentality, and the story is brisk and surprising, perfectly paced. Walls’s marvelous novel asks what we might look for by way of consolation. A miracle shouldn’t be too much to ask."
-              </blockquote>
-              <cite class="praise-author">The New York Times Book Review</cite>
-            </div>
+    function closeModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      formStatus.textContent = '';
+      formStatus.className = 'form-status';
+    }
 
-            <!-- Slide 3 -->
-            <div class="praise-slide">
-              <blockquote class="praise-quote">
-                "Although Orla longs to see her mother again, it is the girl herself who needs bringing back to life – something Walls manages in this poignant, hopeful, compelling little book that offers a window into a troubled teenage soul."
-              </blockquote>
-              <cite class="praise-author">Irish Times</cite>
-            </div>
-          </div>
+    openBtn.addEventListener('click', () => openModal());
+    if (requestInviteBtn) {
+      requestInviteBtn.addEventListener('click', () => openModal('Request for ORLA Invite Code'));
+    }
+    closeBtn.addEventListener('click', closeModal);
 
-          <!-- Carousel Nav Controls -->
-          <div class="carousel-controls">
-            <button class="control-btn" id="prev-quote" aria-label="Previous review">&#8592;</button>
-            <div class="carousel-dots" id="carousel-dots">
-              <span class="dot active" data-slide="0"></span>
-              <span class="dot" data-slide="1"></span>
-              <span class="dot" data-slide="2"></span>
-            </div>
-            <button class="control-btn" id="next-quote" aria-label="Next review">&#8594;</button>
-          </div>
-        </div>
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
 
-        <!-- Author Column: Eoghan Walls -->
-        <div class="novel-author-card">
-          <div class="novel-author-top">
-            <div class="novel-author-photo-wrapper">
-              <img src="images/eoghan_walls.jpg" alt="Eoghan Walls - Author" class="novel-author-photo">
-            </div>
-            <div class="novel-author-header">
-              <h3 class="novel-author-name">EOGHAN<br>WALLS</h3>
-              <span class="novel-author-role">AUTHOR</span>
-            </div>
-          </div>
-          <p class="novel-author-bio">
-            Eoghan Walls is an award-winning poet and author from Derry, Northern Ireland. His critically acclaimed debut novel, <em>The Gospel of Orla</em> (Seven Stories Press), serves as the source material for the film adaptation.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        closeModal();
+      }
+    });
 
-  <!-- Synopsis Section with Image Overlay -->
-  <section class="section synopsis-banner" id="about">
-    <div class="synopsis-banner-bg" style="background-image: url('images/orla_in_school.png');"></div>
-    <div class="synopsis-banner-overlay"></div>
-    <div class="container synopsis-banner-container">
-      <div class="synopsis-content">
-        <span class="section-tag">STORY</span>
-        <h2 class="section-title synopsis-headline">HOW FAR WOULD YOU GO FOR ONE MORE DAY?</h2>
-        <div class="synopsis-body">
-          <p>Fourteen-year-old Orla is anguished after the recent death of her mother. Unable to connect with her grieving father and her friends, Orla privately decides what she needs to help her transition through the grief. She sets out on her own journey through the canals and back roads of Lancashire, determined to make it to Northern Ireland where she believes she will find something – or someone – that might bring her solace after her tremendous loss.</p>
-          <p>In her escape she encounters a mysterious stranger whose own journey is driven by a very different kind of loss and his motivation to fulfil his unique destiny.</p>
-          <p>Their unlikely meeting changes everything.</p>
-          <p>Against the cinematic landscape of Lancaster and the greater Lancashire County, ORLA is a story about grief, disillusionment, and how getting lost can be the best way to find your way home.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    refreshCaptchaBtn.addEventListener('click', loadCaptcha);
 
-  <!-- The World of Orla Section -->
-  <section class="section settings" id="world">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="accent-heading">THE WORLD OF ORLA</h2>
-      </div>
-    </div>
-
-    <div class="world-gallery-full">
-      <!-- Photo 1: Bridge Over Towpath (Cinematic Night) -->
-      <div class="world-item">
-        <img src="images/bridge_over_towpath_night.jpg" alt="Lancaster Canal Stone Bridge at Night" class="world-img">
-      </div>
-
-      <!-- Photo 2: Lancaster Canal Towpath (Cinematic Night) -->
-      <div class="world-item">
-        <img src="images/canal_towpath_night.jpg" alt="Lancaster Canal and Towpath at Night" class="world-img">
-      </div>
-
-      <!-- Photo 3: Historic Lancaster Street (Cinematic Night) -->
-      <div class="world-item">
-        <img src="images/town_street_night.jpg" alt="Historic Lancaster Town Street at Night" class="world-img">
-      </div>
-
-      <!-- Photo 4: Traveling Circus Tent (Cinematic Twilight) -->
-      <div class="world-item">
-        <img src="images/circus_tent.jpg?v=2" alt="Traveling Circus Tent at Twilight" class="world-img">
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="text-center">
-        <p class="world-intro-text">
-          Set against the canals, towpaths, and historic landscapes of Lancaster and scenic Lancashire County, ORLA inhabits a recognisably northern England that gradually becomes something stranger — a world where the ordinary and the miraculous can exist side by side.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Themes Section with Canal Docks Background & Overlay -->
-  <section class="section themes-banner" id="themes">
-    <div class="themes-banner-bg" style="background-image: url('images/canal_docks_night.jpg');"></div>
-    <div class="themes-banner-overlay"></div>
-    <div class="container themes-banner-container">
-      <div class="themes-content">
-        <span class="section-tag">THEMES</span>
-        <h2 class="section-title themes-headline">Grief & Isolation | Faith & Trust | Redemption & Worthiness</h2>
-        <div class="themes-body">
-          <p>When loss shatters a person's foundation, emotional isolation can offer a temporary shelter. But we must be willing to step out of this isolation and rebuild trust, by creating new connections. This step takes personal courage, particularly when the connection is unclear.</p>
-          <p>It is at this point that true healing and the path to redemption can begin; not by seeking absolute certainty, but by choosing to risk emotional connection and learn to trust again in an unpredictable world.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Characters Section -->
-  <section class="section characters" id="characters">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="accent-heading">Characters</h2>
-      </div>
+    // Form Submission via Web3Forms (Static site compatible, Nancy's email never exposed)
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
       
-      <div class="characters-grid">
-        <!-- Character: Orla -->
-        <div class="character-card" data-char="orla">
-          <div class="character-img-wrapper">
-            <img src="images/orla_new.png" alt="Orla" class="character-img">
-            <div class="character-hover-overlay">
-              <p class="character-short-bio">Orla is a very smart but deeply troubled 14 year old girl who has recently lost her mother.</p>
-            </div>
-          </div>
-          <div class="character-info">
-            <h3 class="character-name">Orla</h3>
-          </div>
-        </div>
+      const name = document.getElementById('contact-name').value.trim();
+      const email = document.getElementById('contact-email').value.trim();
+      const subject = document.getElementById('contact-subject').value.trim();
+      const message = document.getElementById('contact-message').value.trim();
+      const captchaEntered = parseInt(captchaInput.value.trim(), 10);
+      const honeypot = document.getElementById('website_url').value.trim();
 
-        <!-- Character: Stranger -->
-        <div class="character-card" data-char="stranger">
-          <div class="character-img-wrapper">
-            <img src="images/character_stranger.jpg" alt="The Stranger" class="character-img">
-            <div class="character-hover-overlay">
-              <p class="character-short-bio">The stranger is a mysterious dark skinned, dark haired refugee in his early 30’s.</p>
-            </div>
-          </div>
-          <div class="character-info">
-            <h3 class="character-name">Stranger</h3>
-          </div>
-        </div>
+      if (honeypot) {
+        // Silently drop bots that auto-fill the trap
+        closeModal();
+        return;
+      }
 
-        <!-- Character: Dad -->
-        <div class="character-card" data-char="dad">
-          <div class="character-img-wrapper">
-            <img src="images/orlas_dad.jpg" alt="Orla's Dad" class="character-img">
-            <div class="character-hover-overlay">
-              <p class="character-short-bio">Dad is barely holding it together. Recently widowed and grieving deeply, Dad has the responsibility of caring for his two daughters...</p>
-            </div>
-          </div>
-          <div class="character-info">
-            <h3 class="character-name">Orla's Dad</h3>
-          </div>
-        </div>
+      if (!name || !email || !message) {
+        formStatus.textContent = 'Please complete all required fields.';
+        formStatus.className = 'form-status error';
+        return;
+      }
 
-        <!-- Character: Lilly -->
-        <div class="character-card" data-char="lilly">
-          <div class="character-img-wrapper">
-            <img src="https://img1.wsimg.com/isteam/ip/25c80e0c-0757-4c39-a570-2e290b42bc79/Gemini_Generated_Image_8emp9r8emp9r8emp.jpeg" alt="Lilly" class="character-img">
-            <div class="character-hover-overlay">
-              <p class="character-short-bio">Lily is the bridge between Orla and Dad, who while complete at odds with one another...</p>
-            </div>
-          </div>
-          <div class="character-info">
-            <h3 class="character-name">Lilly, Orla's younger sister</h3>
-          </div>
-        </div>
+      if (isNaN(captchaEntered) || captchaEntered !== currentCaptchaAnswer) {
+        formStatus.textContent = 'Incorrect verification answer. Please try again.';
+        formStatus.className = 'form-status error';
+        captchaInput.focus();
+        loadCaptcha();
+        return;
+      }
 
-        <!-- Character: Mum -->
-        <div class="character-card" data-char="mom">
-          <div class="character-img-wrapper">
-            <img src="images/orlas_mom.jpg" alt="Orla's Mum" class="character-img">
-            <div class="character-hover-overlay">
-              <p class="character-short-bio">Mum comes to the story only through Orla’s memory of her, yet she is a pivotal character...</p>
-            </div>
-          </div>
-          <div class="character-info">
-            <h3 class="character-name">Orla’s Mum</h3>
-          </div>
-        </div>
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      formStatus.textContent = '';
 
-        <!-- Character: Fantasmo -->
-        <div class="character-card" data-char="fantasmo">
-          <div class="character-img-wrapper">
-            <img src="https://img1.wsimg.com/isteam/ip/25c80e0c-0757-4c39-a570-2e290b42bc79/blob-c914b8c.png" alt="Fantasmo" class="character-img">
-            <div class="character-hover-overlay">
-              <p class="character-short-bio">Fantasmo the Elephant becomes a magical force in Orla’s life, as she sees part of herself in the eyes...</p>
-            </div>
-          </div>
-          <div class="character-info">
-            <h3 class="character-name">Fantasmo the Elephant</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      try {
+        const payload = {
+          access_key: '5f1651e1-898d-42d2-ba13-243a74374d72',
+          from_name: 'Well Produced Films Website',
+          subject: subject || 'Message from Well Produced Films Visitor',
+          name: name,
+          email: email,
+          message: message
+        };
 
-  <!-- Character Details Lightbox/Modal overlay -->
-  <div class="char-detail-modal" id="char-modal" aria-hidden="true">
-    <div class="modal-backdrop" id="modal-backdrop"></div>
-    <div class="modal-content">
-      <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
-      <div class="modal-body" id="modal-body">
-        <!-- Content dynamically injected by Javascript -->
-      </div>
-    </div>
-  </div>
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
 
-  <!-- Team & Filmmakers Section -->
-  <section class="section bios" id="bios">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="accent-heading">THE FILMMAKERS</h2>
-      </div>
+        const result = await response.json();
 
-      <!-- Key Filmmakers (5 Cards: Row 1 = 3 cards, Row 2 = 2 cards centered) -->
-      <div class="filmmakers-row-top">
-        <!-- Nancy Garvin -->
-        <div class="filmmaker-card">
-          <div class="filmmaker-top">
-            <div class="filmmaker-photo-wrapper">
-              <img src="images/nancy_garvin.jpeg" alt="Nancy Garvin - Writer & Producer" class="filmmaker-photo filmmaker-photo-nancy">
-            </div>
-            <div class="filmmaker-header">
-              <h3 class="filmmaker-name">NANCY GARVIN</h3>
-              <span class="filmmaker-role">WRITER / PRODUCER</span>
-            </div>
-          </div>
-          <div class="filmmaker-bio">
-            <p>At the helm is Producer Nancy Garvin, whose passion for developing rich, emotionally complex narratives drives the company's creative vision.</p>
-            <p>With experience spanning all facets of film production and a sharp eye for story development, Nancy leads with a collaborative, audience-focused approach, partnering with visionary writers, directors and talent to bring meaningful, high-quality films to life.</p>
-            <p><em>ORLA</em> marks a powerful next chapter in her mission to produce compelling, emotionally resonant cinema with international appeal.</p>
-          </div>
-          <div class="filmmaker-credentials">
-            <span class="credential-tag">CEO &amp; Producer, Well Produced Films</span>
-            <span class="credential-tag">Screenwriter, <em>ORLA</em></span>
-            <span class="credential-tag">Independent Film Producer</span>
-          </div>
-        </div>
+        if (response.ok && (result.success || response.status === 200)) {
+          formStatus.textContent = 'Thank you! Your message has been sent to Nancy.';
+          formStatus.className = 'form-status success';
+          form.reset();
+          submitBtn.textContent = 'Sent!';
+          setTimeout(() => {
+            closeModal();
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+          }, 2400);
+        } else {
+          formStatus.textContent = result.message || 'Failed to send message. Please try again.';
+          formStatus.className = 'form-status error';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+          loadCaptcha();
+        }
+      } catch (err) {
+        formStatus.textContent = 'Network error. Please try again.';
+        formStatus.className = 'form-status error';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
+  </script>
 
-        <!-- Dr. Maryam Ghorbankarimi -->
-        <div class="filmmaker-card">
-          <div class="filmmaker-top">
-            <div class="filmmaker-photo-wrapper">
-              <img src="images/maryam_ghorbankarimi.png" alt="Dr Maryam Ghorbankarimi - Producer" class="filmmaker-photo">
-            </div>
-            <div class="filmmaker-header">
-              <h3 class="filmmaker-name">DR MARYAM GHORBANKARIMI</h3>
-              <span class="filmmaker-role">PRODUCER</span>
-            </div>
-          </div>
-          <div class="filmmaker-bio">
-            <p>Dr Maryam Ghorbankarimi is a filmmaker, producer and editor with more than 20 years’ experience in transnational filmmaking across Iran, Canada, the USA and the UK. She is also Associate Professor of Film Practice at Lancaster University.</p>
-            <p>Her filmmaking and research are closely interconnected, with a focus on transnational cinema, representation, gender and socially engaged storytelling. Working across fiction and documentary, she brings together research and creative practice to develop stories across cultures and borders.</p>
-          </div>
-          <div class="filmmaker-credentials">
-            <span class="credential-tag">Producer &amp; Filmmaker</span>
-            <span class="credential-tag">20+ Years Film &amp; Editing</span>
-            <span class="credential-tag">Story Development &amp; Post-Production</span>
-          </div>
-        </div>
-
-        <!-- Tim Juby -->
-        <div class="filmmaker-card">
-          <div class="filmmaker-top">
-            <div class="filmmaker-photo-wrapper">
-              <img src="images/tim_juby.jpg" alt="Tim Juby - Producer" class="filmmaker-photo">
-            </div>
-            <div class="filmmaker-header">
-              <h3 class="filmmaker-name">TIM JUBY</h3>
-              <span class="filmmaker-role">PRODUCER</span>
-            </div>
-          </div>
-          <div class="filmmaker-bio">
-            <p>An award-winning Creative Producer and Director with more than 30 years' experience across film, television, animation and commercial production. Tim brings extensive experience in developing and delivering ambitious creative projects, combining strong storytelling with the practical realities of production.</p>
-          </div>
-          <div class="filmmaker-credentials">
-            <span class="credential-tag">Award-Winning Producer &amp; Director</span>
-            <span class="credential-tag">30+ Years Film, TV &amp; Animation</span>
-            <span class="credential-tag">Creative Development &amp; Execution</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="filmmakers-row-bottom">
-        <!-- Michael Shulman -->
-        <div class="filmmaker-card">
-          <div class="filmmaker-top">
-            <div class="filmmaker-photo-wrapper">
-              <img src="images/michael_shulman.jpg" alt="Michael Shulman - Producer" class="filmmaker-photo">
-            </div>
-            <div class="filmmaker-header">
-              <h3 class="filmmaker-name">MICHAEL SHULMAN</h3>
-              <span class="filmmaker-role">PRODUCER</span>
-            </div>
-          </div>
-          <div class="filmmaker-bio">
-            <p>An accomplished executive programme leader with more than 30 years’ experience across Google, Apple, Microsoft, and startups. Michael brings proven operational discipline to film production, promising investors transparent governance, rigorous schedule management, and uncompromising budget control for ambitious creative visions.</p>
-          </div>
-          <div class="filmmaker-credentials">
-            <span class="credential-tag">Executive Programme Leader</span>
-            <span class="credential-tag">30+ Years Tech &amp; Programme Leadership</span>
-            <span class="credential-tag">Governance &amp; Budget Control</span>
-          </div>
-        </div>
-
-        <!-- Red Robin Films -->
-        <div class="filmmaker-card">
-          <div class="filmmaker-top">
-            <div class="filmmaker-photo-wrapper filmmaker-photo-logo">
-              <img src="images/red_robin_films.png" alt="Red Robin Films - Production Partner" class="filmmaker-photo filmmaker-logo-img">
-            </div>
-            <div class="filmmaker-header">
-              <h3 class="filmmaker-name">RED ROBIN FILMS</h3>
-              <span class="filmmaker-role">PRODUCTION PARTNER</span>
-            </div>
-          </div>
-          <div class="filmmaker-bio">
-            <p>A UK-based independent production company led by producers and directors Isobel Drane and Kieran Lowley, dedicated to ambitious, character-driven storytelling.</p>
-            <p>Pioneering innovative filmmaking and cutting-edge virtual production technologies, Red Robin Films collaborated with Sony Europe on the landmark production <em>Hestia</em> to push the boundaries of cinematic storytelling.</p>
-          </div>
-          <div class="filmmaker-credentials">
-            <span class="credential-tag">UK Production Company</span>
-            <span class="credential-tag">Virtual Production &amp; Innovation</span>
-            <span class="credential-tag">Sony Europe Co-Production Partner</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="filmmakers-divider"></div>
-
-      <!-- Notes Subheading -->
-      <div class="notes-header text-center">
-        <h3 class="notes-section-title">Notes from Nancy Garvin, Producer, and Eoghan Walls, Author</h3>
-      </div>
-
-      <div class="notes-quotes-grid">
-        <div class="note-block">
-          <h3 class="note-title">Nancy Garvin, Producer, Well Produced Films</h3>
-          <blockquote class="note-quote">
-            "We are thrilled to adapt <em>The Gospel of Orla</em> for the big screen," commented Nancy Garvin, CEO and Producer of Well Produced Films. "Eoghan Walls has created a truly original and cinematic tale. We are honoured to bring it to life as '<em>Orla</em>'."
-          </blockquote>
-        </div>
-
-        <div class="note-block">
-          <h3 class="note-title">Eoghan Walls, Author, The Gospel of Orla</h3>
-          <blockquote class="note-quote">
-            "It’s going to be great!" said author Eoghan Walls. "Well Produced Films has a wonderful vision for the project; it will be amazing to see the world of 'Orla' onscreen.  I believe in their power to realise the story, and share it with a wider audience."
-          </blockquote>
-        </div>
-      </div>
-
-      <div class="bios-accordion-wrapper">
-        <div class="accordion-item">
-          <button class="accordion-trigger" id="bio-wpf-trigger" aria-expanded="false">
-            <span>About Well Produced Films</span>
-            <span class="accordion-icon"></span>
-          </button>
-          <div class="accordion-panel" id="bio-wpf-panel" aria-hidden="true">
-            <div class="accordion-panel-content">
-              <p>
-                Well Produced Films is an independent production company dedicated to bringing character-driven stories to audiences everywhere. With a focus on quality storytelling and impactful filmmaking, the company is now venturing into feature film production with <em>Orla</em>.
-              </p>
-              <p>
-                Enquiries: <a href="mailto:info@wellproducedfilms.com" target="_blank">info@wellproducedfilms.com</a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-trigger" id="bio-author-trigger" aria-expanded="false">
-            <span>About Eoghan Walls</span>
-            <span class="accordion-icon"></span>
-          </button>
-          <div class="accordion-panel" id="bio-author-panel" aria-hidden="true">
-            <div class="accordion-panel-content">
-              <p>
-                Eoghan Walls is a poet and author from Derry, Northern Ireland. His most recent poetry collection – <em>Pigeon Songs</em> (Seren, 2019) – was a runner up for the Pigott Prize, Ireland's largest poetry prize. <em>The Gospel of Orla</em> (Seven Stories Press and Seven Stories Press UK, 2023) is his first novel.
-              </p>
-              <p>
-                He currently lectures in Creative Writing at Lancaster University, where he lives with his wife and a small contingency of daughters who serves as his best critics.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-trigger" id="bio-press-trigger" aria-expanded="false">
-            <span>About Seven Stories Press</span>
-            <span class="accordion-icon"></span>
-          </button>
-          <div class="accordion-panel" id="bio-press-panel" aria-hidden="true">
-            <div class="accordion-panel-content">
-              <p>
-                Seven Stories Press was founded by publisher Dan Simon in 1995 with its British arm, Seven Stories Press UK, following in 2016. The press publishes a select list of international authors of fiction, non-fiction, and children’s titles, informed by its belief in the radical imagination and the power of books to change our DNA and the contours of the world around us.
-              </p>
-              <p>
-                Seven Stories Press Inc. is best known globally as a nexus for passionate voices of conscience and writers of the imagination, including being the first English-language publisher of the 2022 Nobel Literature laureate Annie Ernaux.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section (Hidden) -->
-  <section class="section contact" id="contact" style="display: none;">
-    <div class="container">
-      <div class="contact-card-wrapper">
-        <div class="contact-header text-center">
-          <span class="section-tag">Connect</span>
-          <h2 class="section-title">Get In Touch</h2>
-          <p class="contact-subtitle">For production inquiries, script notes, or press contacts, reach out to our team.</p>
-        </div>
-        
-        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="contact-form">
-          <!-- Web3Forms Access Key -->
-          <input type="hidden" name="access_key" value="f28a18e0-9499-4413-b645-3977f7a48b8e">
-          <!-- Form Customization -->
-          <input type="hidden" name="from_name" value="Orla Website">
-          
-          <div class="form-row">
-            <div class="form-group">
-              <label for="contact-name">Name</label>
-              <input type="text" id="contact-name" name="name" required placeholder="Your name">
-            </div>
-            <div class="form-group">
-              <label for="contact-email">Email Address</label>
-              <input type="email" id="contact-email" name="email" required placeholder="your.email@example.com">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="contact-subject">Subject</label>
-            <input type="text" id="contact-subject" name="subject" required placeholder="How can we help you?">
-          </div>
-          <div class="form-group">
-            <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" rows="6" required placeholder="Share details regarding your inquiry..."></textarea>
-          </div>
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary" id="submit-btn">Send Message</button>
-            <p class="form-success-msg" id="form-success" aria-live="polite">Thank you! Your message has been successfully received. We will get back to you soon.</p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <h3>Well Produced Films</h3>
-        <p>Bringing character-driven stories of heart, tragedy, and magic to the screen.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Navigation</h4>
-        <a href="#hero">Film</a>
-        <a href="#novel">Novel</a>
-        <a href="#about">Story</a>
-        <a href="#world">World</a>
-        <a href="#themes">Themes</a>
-        <a href="#bios">Team</a>
-        <a href="#contact" style="display: none;">Invest</a>
-        <a href="#contact" style="display: none;">Contact</a>
-      </div>
-      <div class="footer-socials">
-        <h4>Contact</h4>
-        <p>Well Produced Films, LLC</p>
-        <p>Email: <a href="mailto:info@wellproducedfilms.com" target="_blank">info@wellproducedfilms.com</a></p>
-        <p class="copyright-text">Copyright &copy; 2025 Well Produced Films, LLC - All Rights Reserved.</p>
-        <p class="last-updated-text">Last updated: 2026-08-18 16:20:50 UTC</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Javascript Application -->
-  <script src="js/app.js?v=10"></script>
 </body>
 </html>
